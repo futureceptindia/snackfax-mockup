@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snackfax · Featured Image Templates (Inc42 + Entrackr style, brand colours)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#FF003C; --red-deep:#C2002E; --maroon:#1d0710; --ink:#1a0f13;
+    --cream:#efe6df; --gold:#FFC24B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:#e7e0d9;color:var(--ink);padding:34px 20px 70px}
+  .head{max-width:880px;margin:0 auto 26px}
+  .head h1{font-family:Archivo;font-weight:900;font-size:26px;letter-spacing:-.5px}
+  .head p{color:#6b5d50;font-size:14px;margin-top:6px;line-height:1.5}
+  .swatches{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;align-items:center}
+  .sw{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:600;background:#fff;border:1px solid #e0d5c8;padding:5px 11px 5px 6px;border-radius:20px}
+  .chip{width:16px;height:16px;border-radius:4px;display:inline-block}
+  .wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
+  figure{background:#fff;border:1px solid #e0d5c8;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(60,40,20,.08)}
+  .canvas{position:relative;width:100%;aspect-ratio:1200/630;overflow:hidden}
+  figcaption{padding:13px 18px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:#6b5d50}
+  figcaption b{color:var(--ink)}
+  .ref{margin-left:auto;font-size:11px;font-weight:700;color:var(--red);background:#ffe6ec;padding:3px 10px;border-radius:20px}
+
+  /* shared brand bits */
+  .logo{position:absolute;display:flex;align-items:center;gap:9px;font-family:Archivo;font-weight:900;z-index:9}
+  .logo img{width:1.15em;height:1.15em;border-radius:6px;display:block}
+  .badge{position:absolute;font-family:Archivo;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;border-radius:6px;z-index:9}
+  .head-txt{font-family:Archivo;font-weight:800;line-height:1.04;letter-spacing:-.5px}
+  .logocard{background:#fff;border-radius:7px;font-family:Archivo;font-weight:800;color:var(--ink);box-shadow:0 3px 10px rgba(0,0,0,.12);display:inline-flex;align-items:center;gap:6px}
+  .logocard .edge{width:4px;align-self:stretch;border-radius:4px;background:var(--red)}
+
+  /* ===== T1 Entrackr funding ===== */
+  .t1{background:radial-gradient(125% 125% at 12% 18%, #3a0a16 0%, #1d0710 58%, #120409 100%)}
+  .t1 .logo{top:7%;left:5%;font-size:26px;color:#fff}
+  .t1 .badge{top:30%;left:5%;background:var(--red);color:#fff;font-size:15px;padding:7px 14px}
+  .t1 .head-txt{position:absolute;top:39%;left:5%;width:55%;color:#fff;font-size:42px}
+  .t1 .sub{position:absolute;bottom:9%;left:5%;color:#e7a9b6;font-size:16px;font-weight:600;font-family:Inter}
+  .t1 .lc{position:absolute;top:32%;left:5%}
+  .t1 .coins{position:absolute;right:6%;bottom:8%;font-size:150px;filter:drop-shadow(0 14px 22px rgba(0,0,0,.45))}
+  .t1 .rupee{position:absolute;right:30%;top:22%;font-family:Anton;font-size:130px;color:rgba(255,0,60,.20)}
+  .t1 .hero{position:absolute;right:8%;top:13%;font-size:140px;filter:drop-shadow(0 16px 26px rgba(0,0,0,.5))}
+
+  /* ===== T2 Inc42 collage ===== */
+  .t2{background:#efe6df;background-image:radial-gradient(rgba(0,0,0,.045) 1px,transparent 1px);background-size:7px 7px}
+  .t2 .logo{top:7%;right:5%;font-size:26px;color:var(--ink)}
+  .t2 .key{position:absolute;font-family:Anton;font-size:180px;color:var(--red);left:42%;top:13%;transform:translateX(-50%);letter-spacing:-2px;line-height:.8}
+  .t2 .hero{position:absolute;left:50%;top:40%;transform:translate(-50%,-30%);font-size:175px;filter:grayscale(.1) drop-shadow(0 10px 18px rgba(0,0,0,.18))}
+  .t2 .badge{top:8%;left:5%;background:var(--red);color:#fff;font-size:14px;padding:7px 13px}
+  .t2 .head-txt{position:absolute;bottom:8%;left:5%;width:64%;color:var(--ink);font-size:30px}
+  .t2 .lc1{position:absolute;top:16%;left:5%;font-size:18px;padding:7px 12px}
+  .t2 .lc2{position:absolute;bottom:34%;right:6%;font-size:16px;padding:6px 11px}
+  .t2 svg.doodle{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:2}
+
+  /* ===== T3 FSSAI / regulation alert ===== */
+  .t3{background:linear-gradient(135deg,#241016 0%,#14060a 100%)}
+  .t3 .logo{top:7%;left:5%;font-size:24px;color:#fff}
+  .t3 .badge{top:30%;left:5%;background:var(--red);color:#fff;font-size:16px;padding:8px 15px;display:flex;align-items:center;gap:8px}
+  .t3 .head-txt{position:absolute;top:43%;left:5%;width:62%;color:#fff;font-size:36px}
+  .t3 .hero{position:absolute;right:5%;top:50%;transform:translateY(-50%);font-size:150px;opacity:.92;filter:drop-shadow(0 12px 20px rgba(0,0,0,.45))}
+  .t3 .strip{position:absolute;left:0;bottom:0;width:100%;height:9px;background:repeating-linear-gradient(45deg,var(--red) 0 22px,#7a0020 22px 44px)}
+  .t3 .lc{position:absolute;bottom:10%;left:5%;font-size:15px;padding:6px 11px}
+
+  /* ===== T4 product / food hero ===== */
+  .t4{background:linear-gradient(120deg,var(--red) 0%,var(--red-deep) 100%)}
+  .t4 .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,3,7,.5) 0%,rgba(15,3,7,.12) 55%,transparent 100%)}
+  .t4 .logo{top:7%;left:5%;font-size:24px;color:#fff;z-index:9}
+  .t4 .badge{top:30%;left:5%;background:#fff;color:var(--red);font-size:14px;padding:7px 13px}
+  .t4 .head-txt{position:absolute;top:42%;left:5%;width:58%;color:#fff;font-size:40px;text-shadow:0 2px 14px rgba(0,0,0,.3)}
+  .t4 .hero{position:absolute;right:4%;top:50%;transform:translateY(-50%);font-size:210px;filter:drop-shadow(0 18px 30px rgba(0,0,0,.4))}
+  .t4 .src{position:absolute;bottom:8%;left:5%;color:rgba(255,255,255,.9);font-size:15px;font-weight:600}
+</style>
+</head>
+<body>
+  <div class="head">
+    <h1>Snackfax featured-image templates</h1>
+    <p>Inc42 + Entrackr style, now in Snackfax's real brand colours (pulled from snackfax.com). Fixed brand frame — clover logo + the brand red as the single accent + a category badge — over a swappable hero. Headlines are real items from the group; the big food glyphs are <b>placeholders</b> for the AI/licensed hero photo or cut-out.</p>
+    <div class="swatches">
+      <span class="sw"><span class="chip" style="background:#FF003C"></span>#FF003C brand red</span>
+      <span class="sw"><span class="chip" style="background:#C2002E"></span>#C2002E deep</span>
+      <span class="sw"><span class="chip" style="background:#1d0710;border:1px solid #ccc"></span>#1D0710 maroon-ink</span>
+      <span class="sw"><span class="chip" style="background:#fff;border:1px solid #ccc"></span>white (logo + text)</span>
+      <span class="sw"><img src="snackfax-icon.png" style="width:18px;height:18px;border-radius:4px"> real clover mark</span>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- T1 — Entrackr-style funding -->
+    <figure>
+      <div class="canvas t1">
+        <div class="logo"><img src="snackfax-icon.png" alt="">Snackfax</div>
+        <div class="badge">● Funding</div>
+        <div class="logocard lc"><span class="edge"></span>Troovy</div>
+        <div class="head-txt">Snack brand Troovy to raise up to ₹200 Cr</div>
+        <div class="sub">Led by ADIA · D2C snacking</div>
+        <div class="rupee">₹</div>
+        <div class="hero">🥨</div>
+        <div class="coins">🪙</div>
+      </div>
+      <figcaption><b>Funding / D2C raise.</b> Founder/product hero + brand logo card + ₹-coin motif on a deep maroon gradient, brand-red badge. <span class="ref">Entrackr style</span></figcaption>
+    </figure>
+
+    <!-- T2 — Inc42-style collage -->
+    <figure>
+      <div class="canvas t2">
+        <svg class="doodle" viewBox="0 0 1200 630" preserveAspectRatio="none">
+          <path d="M120 470 q140 -120 300 -40 t320 -30" fill="none" stroke="#FF003C" stroke-width="3" stroke-dasharray="2 12" stroke-linecap="round" opacity=".65"/>
+          <path d="M880 250 l70 -70 m0 0 l-12 34 m12 -34 l-34 12" fill="none" stroke="#FF003C" stroke-width="5" stroke-linecap="round"/>
+          <circle cx="1020" cy="430" r="46" fill="none" stroke="#FF003C" stroke-width="3" stroke-dasharray="3 10"/>
+        </svg>
+        <div class="logo"><img src="snackfax-icon.png" alt="">Snackfax</div>
+        <div class="badge">Funding</div>
+        <div class="key">$9 Mn</div>
+        <div class="hero">🍫</div>
+        <div class="logocard lc1"><span class="edge"></span>Manam Chocolate</div>
+        <div class="logocard lc2"><span class="edge"></span>Omnivore</div>
+        <div class="head-txt">Omnivore leads $9 Mn round in Manam Chocolate</div>
+      </div>
+      <figcaption><b>Funding / M&A collage.</b> Textured pastel bg, one big typographic figure, duotone hero, brand-logo cards, brand-red data-viz doodles. <span class="ref">Inc42 style</span></figcaption>
+    </figure>
+
+    <!-- T3 — FSSAI / regulation alert -->
+    <figure>
+      <div class="canvas t3">
+        <div class="logo"><img src="snackfax-icon.png" alt="">Snackfax</div>
+        <div class="badge">⚠ FSSAI</div>
+        <div class="head-txt">FSSAI issues notices to Bikanervala, Marico over label claims</div>
+        <div class="logocard lc"><span class="edge"></span>Regulation</div>
+        <div class="hero">⚖️</div>
+        <div class="strip"></div>
+      </div>
+      <figcaption><b>Regulation / recall.</b> Bold brand-red badge + headline + contextual hero — never a bare regulator logo (the ET trap). <span class="ref">Inc42 + alert</span></figcaption>
+    </figure>
+
+    <!-- T4 — product / food hero -->
+    <figure>
+      <div class="canvas t4">
+        <div class="scrim"></div>
+        <div class="logo"><img src="snackfax-icon.png" alt="">Snackfax</div>
+        <div class="badge">New launch</div>
+        <div class="head-txt">Bikaji rolls out a baked namkeen range</div>
+        <div class="hero">🥟</div>
+        <div class="src">Snackfax Desk</div>
+      </div>
+      <figcaption><b>Product launch / generic.</b> Appetising food hero, full-bleed brand-red frame + badge. The fallback that guarantees nothing ships bare. <span class="ref">Entrackr + brand</span></figcaption>
+    </figure>
+
+  </div>
+</body>
+</html>
